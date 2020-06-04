@@ -1,0 +1,29 @@
+Pasos para Trabajar con Git y Git-Hub:
+1-Carpeta local Virgen:
+Quiere decir que es primera vez que se va a conectar esta carpeta a algun repositorio, para ello ejecutaremos los sigtes comandos de GIT:
+    1.1-git init
+    1.2-git status
+    1.3-git remote add origin "enlace del repositorio" --> el enlace va sin las ""
+    1.4-git clone "enlace del repositorio" --> seguimos la misma recomendacion del punto anterior (1.3) --> esto si el repositorio NO esta vacio
+    1.5-Instalamos las librerias que el proyecto necesite
+        Para este caso y en el momento que va el proyecto se necesita la sigte libreria:
+        1.5.1-npm i -g --save firebase angularfire2
+        1.5.2-npm i bootstrap jquery @popperjs/core
+    1.6-npm i --> para instalar todos los paketes que necesite el proyecto que alguien mas ya las habia utiilizado antes de montarlo al repositorio
+
+2-Montar cambios en el repositorio Git-Hub:
+En esta parte ya se tiene el proyecto clonado de forma local, y ahora procederemos a montar las actualizaciones al repositorio:
+    2.1-git status
+    2.2-git pull --> es indispensable hacerlo porque si llega a detectar cambios en el repositorio y no se traen al proyecto local, NO DEJARA REALIZAR EL COMMIT
+    2.3-git add .
+    2.4-git commit -m "Puede ser un titulo o una descripcion" --> esta si tiene que llevar las ""
+    2.5-git push -u origin master
+
+3-Traer cambios del repositorio al proyecto local:
+1-git pull
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                NOTACIONES DE CAMBIOS
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Tuvimos problemas a la hora de integrar el Login + Register con el CRUD
