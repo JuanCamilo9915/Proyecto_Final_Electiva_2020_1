@@ -1,0 +1,136 @@
+<body>
+
+
+<div class="container">
+  <div class="row justify-content-center p-5">
+    <h1>Registro asociados</h1>
+    <div class="form-group">
+      <label for="">Sector</label>
+      <input type="text" class="form-con  trol" [(ngModel)]="sector" placeholder="Ingrese el sector al que pertenece">
+
+      <label for="">Sub sector</label>
+      <input type="text" class="form-con  trol" [(ngModel)]="subsector" placeholder="Ingrese el sub sector al que pertenece">
+
+      <label for="">Nombre de la entidad</label>
+      <input type="text" class="form-con  trol" [(ngModel)]="nombree" placeholder="Ingrese el nombre de la entidad">
+
+      <h3> Informacion del contacto </h3>
+
+      <label for="">Nombre completo</label>
+      <input type="text" class="form-con  trol" [(ngModel)]="nombrec" placeholder="Ingrese el nombre completo">
+
+      <label for="">Numero de contacto</label>
+      <input type="number" class="form-con  trol" [(ngModel)]="numeroc" placeholder="Ingrese su numero de celular">
+
+      <label for="">Correo electronico</label>
+      <input type="text" class="form-con  trol" [(ngModel)]="correo" placeholder="Ingrese su correo electronico">
+
+      <label for="">Tipo de acuerdo</label>
+      <input type="text" class="form-con  trol" [(ngModel)]="tipoa" placeholder="Ingrese cual es el tipo de acuerdo">
+
+      <label for="">Objetivo de la relacion</label>
+      <input type="text" class="form-con  trol" [(ngModel)]="objetivo" placeholder="Ingrese es el objetivo de la relacion">
+
+      <label for="">Unidad estrategica de interes</label>
+      <input type="text" class="form-con  trol" [(ngModel)]="unidade" placeholder="Ingrese la unidad estrategica interesada">
+
+      <div class="button">
+        <button class="btn btn-primary" (click)="CreateRecord()">Agregar</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="row p-2">
+    <div class="md-3 p-2 justify-content-center">
+      <h4>Informacion</h4>
+      <h4>de los asociados</h4>
+    </div>
+    <div class="col-md-3" *ngFor="let item of asociado">
+      <div class="card" *ngIf="!item.isedit; else elseBlock">
+        <div class="card-body">
+          <div class="card-title">
+            Sector: {{item.sector1}}
+          </div>
+          <div class="class-subtitle">
+            SubSector: {{item.subsector1}}
+          </div>
+          <div class="card-text">
+            Nombre Entidad: {{item.nombree1}}
+          </div>
+          <div class="card-text">
+            Nombre Completo: {{item.nombrec1}}
+          </div>
+          <div class="card-text">
+            Numero de contacto: {{item.numeroc1}}
+          </div>
+          <div class="card-text">
+            Correo: {{item.correo1}}
+          </div>
+          <div class="card-text">
+            Tipo acuerdo: {{item.tipoa1}}
+          </div>
+          <div class="card-text">
+            Objetivo: {{item.objetivo1}}
+          </div>
+          <div class="card-text">
+            Unidad estrategica: {{item.unidade1}}
+          </div>
+          <span>
+            <a (click)="EditRecord(item)" class="btn btn-primary btn-xs">Edit Employee</a>
+            <a (click)="DeleteAsociado(item.id)"  class="btn btn-danger btn-xs">Eliminar info</a>
+          </span>
+        </div>
+      </div>
+
+      <ng-template #elseBlock>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              Editar información
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-12">
+                  <input type="text"[(ngModel)]="item.editsector" class=form-control>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" [(ngModel)]="item.editsubsector" class=form-control>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" [(ngModel)]="item.editnombree" class=form-control>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" [(ngModel)]="item.editnombrec" class=form-control>
+                </div>
+                <div class="col-md-12">
+                  <input type="number" [(ngModel)]="item.editnumeroc" class=form-control>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" [(ngModel)]="item.editcorreo" class=form-control>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" [(ngModel)]="item.edittipoa" class=form-control>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" [(ngModel)]="item.editobjetivo" class=form-control>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" [(ngModel)]="item.editunidade" class=form-control>
+                </div>
+              </div>
+            </div>
+            <a href="" class="btn btn-danger btn-xs" (click)="item.isedit = false">Cancel</a>
+            <a  class="btn btn-danger btn-xs" (click)="UpdateRecord(item)">Actualizar</a>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+
+
+<footer>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Logo_UCC.jpg" width="150" height="150" />
+</footer>
+</body>
